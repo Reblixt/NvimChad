@@ -74,4 +74,28 @@ return {
             require("nvim-ts-autotag").setup()
         end,
     },
+
+    -- LazyGit
+    {
+        "kdheepak/lazygit.nvim",
+        -- event = "VeryLazy",
+
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        keys = {
+            { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+        },
+        -- require("configs.lazygit")
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+        -- optional for floating window border decoration
+        -- setting the keybinding for LazyGit with 'keys' is recommended in
+        -- order to load the plugin when the command is run for the first time
+    },
 }
